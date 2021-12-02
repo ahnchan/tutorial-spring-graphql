@@ -1,0 +1,62 @@
+# Find All
+{
+  products {
+    id
+    title
+    author
+  }
+}
+
+
+# Find all with reviews
+{
+  products {
+    id
+    title
+    author
+    reviews {
+      id
+      productid
+      reviewer
+      text
+    }
+  }
+}
+
+
+# Find by Id
+{
+  productById(id: 1) {
+    id
+    title
+    author
+    reviews {
+      id
+      productid
+      reviewer
+      text
+    }
+  }
+}
+
+# Mutation - addProduct
+mutation {
+  addProduct(
+    title: "DUNE",
+    author: "Frank Herbert",
+    ISBN: ""
+  ) {
+    id
+    title
+    author
+  }
+}
+
+# Find by title
+{
+  productByTitle(title: "DUNE") {
+    id
+    title
+    author
+  }
+}
